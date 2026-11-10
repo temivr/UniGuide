@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Settings | UniGuide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header id="profile">
+
+    </header>
+
+    <main class="settings-page">
+        <h1>Settings</h1>
+        <details>
+            <summary>
+                <img src="	assets/settings - icons/accessibility.png"
+                    alt=""
+                    class="settings-icon"
+                    width="24"
+                    height="24">
+                Accessibility
+            </summary>
+            <div class="settings-row">
+                <label for="text-size">Text size</label>
+                <input id="text-size" type="range">
+            </div>
+            <div class="settings-row">
+                <label for="high-contrast">High contrast</label>
+                <input id="high-contrast" type="checkbox">
+            </div>
+            <div class="settings-row">
+                <label for="spoken-directions">Spoken directions</label>
+                <input id="spoken-directions" type="checkbox">
+            </div>
+        </details>
+
+        <details>
+            <summary>
+                <img class="settings-icon" src="assets/settings - icons/map-pin.png" 
+                    alt="" width="24" height="24">
+                Map Preferences
+            </summary>
+            <div class="settings-row">
+            <label for="map-orientation">Map orientation</label>
+            <select id="map-orientation">
+                <option>North-up</option>
+                <option>Direction of travel</option>
+            </select>
+            </div>
+            <div class="settings-row">
+                <label for="show-landmarks">Show landmarks</label>
+                <input id="show-landmarks" type="checkbox">
+            </div>            
+        </details>
+
+        <details>
+            <summary>
+                <img class="settings-icon" src="assets/settings - icons/bell.png" 
+                    alt="" width="24" height="24">
+                Notifications
+            </summary>
+            <div class="settings-row">
+                <label for="enable-class-reminders">Enable class reminders</label>
+                <input id="enable-class-reminders" type="checkbox">
+            </div>
+            <div id="reminder-timing" class="settings-row">
+                <label for="reminder-time">Remind me before class</label>
+                    <select id="reminder-time">
+                        <option>5 minutes before</option>
+                        <option>10 minutes before</option>
+                        <option>15 minutes before</option>
+                    </select>
+            </div>   
+        </details>
+
+        <details>
+            <summary>
+                <img class="settings-icon" src="assets/settings - icons/person.png" 
+                    alt="" width="24" height="24">
+                Account &amp; Support
+            </summary>
+            <div class="settings-row">
+                <a href="#profile">View profile</a>
+            </div>
+            <div class="settings-row">
+                <a href="https://www.gold.ac.uk/students/student-hub/">Help & support</a>
+            </div>
+            <div class="settings-row">
+                <button type="button">Log out</button>
+            </div>
+        </details>
+    </main>
+
+    <footer>
+        <!-- footer-->
+    </footer>
+</body>
+</html>

@@ -1,0 +1,137 @@
+/* Global*/
+
+@font-face {
+    font-family: "Inter";
+    src: url("assets/fonts/InterVariable.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+body, button, input, select {
+    font-family: "Inter", Arial, sans-serif;
+}
+
+@media (min-width: 600px) {
+  .header {grid-area: 1 / span 6;}
+  .menu {grid-area: 2 / span 1;}
+  .content {grid-area: 2 / span 4;}
+  .facts {grid-area: 2 / span 1;}
+  .footer {grid-area: 3 / span 6;}
+}
+
+.section-card {
+    background-color: #FFD700;
+    border-style: hidden;
+    border-radius: 3rem;
+
+
+/* Home Page */
+}
+
+.ann-card{
+    background-color: #D9D9D9;
+}
+
+
+.section-card {
+    background-color: #FFD700;
+    position: relative;
+    border-radius: 12px;
+}
+.section-scroll {
+    background-color: grey;
+    position: relative;
+    border-radius: 12px;
+
+}
+
+/* Calendar */
+
+/* Settings */
+
+.settings-page details {
+    background-color: #D9D9D9;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+}
+
+.settings-page .settings-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    flex-wrap: wrap;
+}
+
+.settings-page summary {
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+.settings-page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.settings-page details > summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    cursor: pointer;
+}
+
+.settings-page details > summary::-webkit-details-marker {
+    display: none;
+}
+
+.settings-page details > summary::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: 4px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+}
+
+.settings-page details[open] > summary::after {
+    transform: rotate(225deg);
+}
+
+.settings-page details {
+    background-color: white;
+    border: 1px solid #aaa;
+    border-radius: 12px;
+    padding: 0;
+}
+
+.settings-page details > summary {
+    background-color: #e5e5e5;
+    padding: 16px;
+    border-radius: 11px;
+}
+
+.settings-page details[open] > summary {
+    border-bottom: 1px solid #ccc;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.settings-page details > .settings-row {
+    padding-inline: 16px;
+}
+
+.settings-page .settings-icon {
+    flex-shrink: 0;
+    object-fit: contain;
+}
