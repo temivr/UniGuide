@@ -8,11 +8,36 @@
 </head>
 
 <body>
-    <header id="profile">
 
+<!--PROFILE -->
+    <header class="top_header" id="profile">
+        <h1 class="logo">UG</h1> <!-- Main logo for UniGuide-->
+
+        <!-- Main segment for header to display user profile and map -->
+        <div class="header_content">
+
+            <!-- sub section of header to display user profile and course-->
+            <div class="user_card"> 
+                <img src="assets/profile_picture.jpg" alt="profile picture">
+
+                <!-- Containers for text, easier for css to customise-->
+                <div class="user_text">
+                    <p class="user_name">Alysa Chopra</p>
+                    <p class="user_sub">FT BSC COMPUTER SCIENCE (SOFTWARE ENGINEERING)</p>
+                </div>
+            </div>
+
+            <!-- Other sub section to display the map icon, an a tag instead for it to open the campus map-->
+            <a href="#" class="campus_map">
+                <img src="assets/campus_map_icon.png" alt="map icon">
+            </a>
+        </div>
     </header>
 
-    <main class="settings-page">
+<div class="title-card">
+        <h2></h2>   
+        <p>
+        <main class="settings-page">
         <h1>Settings</h1>
         <details>
             <summary>
@@ -93,9 +118,30 @@
             </div>
         </details>
     </main>
+    </p>
+</div>
 
-    <footer>
-        <!-- footer-->
+    <!-- NAVIGATION-->
+    <footer class="bottom_nav">
+
+        <!-- Listed links for each icon-->
+        <nav class="nav_buttons">
+            <a href="/index.html" class="nav_item"> <!-- hashtag makes this section an entire link, no address has been added yet-->
+                <img src="assets/home_icon.png" alt="Home icon">
+                <span>Home</span>
+            </a>
+            <a href="/calender.html" class="nav_item active"> <!-- Active added to be highlighted, easier for user's to understand what page they are in -->
+                <img src="assets/calender_icon.png" alt="Calendar icon">
+                <span>Calendar</span>
+            </a>
+            <a href="/settings.html" class="nav_item">
+                <img src="assets/settings_icon.png" alt="Settings icon">
+                <span>Settings</span>
+            </a>
+        </nav>
     </footer>
+
+    
+
 </body>
 </html>
