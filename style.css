@@ -1,9 +1,14 @@
 /* Global*/
 * {
-    background-color: #D9D9D9;
     margin: 0px;
+  
 }
 
+#app-background {
+  background-color: #D9D9D9;
+  height: 100vh;
+  width: 100vw;
+}
 /* 1. Simulating profile space */
 .profile {
   height: 10rem;
@@ -18,20 +23,54 @@
     width: auto;
     border-radius: 50px;
     border: 2px solid #FFD700;
-  
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* 3. Content Card */
+.content-card {
+  background-color: #CCC8C8;
+  border: 1px solid black;
+  border-radius: 30px;
+  margin: 0px
+
+}
+
+.preview-icon {
+  background-color: transparent;
+  padding-left: 20px;
+  color: #1E48B6;
 }
 
 h1 {
-    background-color: transparent;
-    padding: 20px;
-    padding-left: 30px;
+    
+    padding: 20px 20px 5px 20px;
 }
 
+h2 {
+    color: #605D5D;
+    padding: 20px 20px 5px 20px;
+}
 
+h3, p {
+    color: #605D5D;
+    padding: 0px 20px 5px 20px;
+  
+}
 
+a {
+  color: #605D5D;
+  
+}
 
-
-
+img {
+  border-radius: 30px;
+  margin: 0px
+}
+.campus-map {
+  text-decoration: none;
+}
 
 
 
