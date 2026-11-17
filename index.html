@@ -1,38 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Tab title -->    
-    <title>Uniguide - Home</title>
+    <title>UniGuide - Home</title>
   
     <!-- linked style sheet -->
     <link rel="stylesheet" href="style.css">
 </head>
-  
+
 <body>
-  <div id="app-background">
-                                      <!-- 1. Simulating profile space -->
-    <div class="profile"></div>
+    <div id="app-background">
+<!-- Fixed Header -->
+<header class="top_header">
+    <h1 class="logo">UG</h1> <!-- Main logo for UniGuide-->
+        <!-- Main segment for header to display user profile and map -->
+        <div class="header_content">
+
+            <!-- sub section of header to display user profile and course-->
+            <div class="user_card"> 
+                <img src="assets/profile_picture.jpg" alt="profile picture">
+
+                <!-- Containers for text, easier for css to customise-->
+                <div class="user_text">
+                    <p class="user_name">Alysa Chopra</p>
+                    <p class="user_sub">FT BSC COMPUTER SCIENCE (SOFTWARE ENGINEERING)</p>
+                </div>
+            </div>
+
+            <!-- Other sub section to display the map icon, an a tag instead for it to open the campus map-->
+            <a href="#campus-map-global" class="campus_map" class="bottom-page">
+                <img src="assets/campus_map_icon.png" alt="map icon">
+            </a>
+        </div>
+    </header>
+
   
+    <!-- Main Content Area -->
+    
+         
                                         <!-- 2. Yellow Title Card -->
     <div class="title-card">
         <h1>Computing<br>Announcements</h1> 
 
-
-
-
-      
-                                          <!-- 3. Content Cards-->
+                                         <!-- 3. Content Cards-->
 
 <!-- Content 1 -->
-
-
-
         <div class="content-card">
             <h2>Hacksmiths 2026</h2>
 
             <!-- Map link and pin (from Lucide) -->
-            <a class="campus-map" href="#index.html">
+            <a class="campus-map lucide lucide-map-pin preview-icon" href="#campus-map-global">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     width="15"
                     height="15"
@@ -42,7 +61,7 @@
                     stroke-width="3"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="lucide lucide-map-pin preview-icon">
+                    >
 
                     <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 
                     0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/>
@@ -53,24 +72,23 @@
 
             <!-- Event link -->
             <h3>
-                <a href="#bottom-page">Volunteers Wanted!</a>
+                <a href="#hacksmiths">Volunteers Wanted!</a>
             </h3>
 
             <!-- Event Details -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <p>Hacksmiths is back for 2026!
             </p>
 
             <!-- Event image -->
             <img src="./assets/hacksmiths.jpg" alt="Students coding around table">
         </div>
 
-<!-- Content 2 -->
+ <!-- Content 2 -->
         <div class="content-card">
             <h2>Jennifer George</h2>
 
             <!-- Map link and pin (from Lucide) -->
-            <a class="campus-map" href="#index.html">
+            <a class="campus-map lucide lucide-map-pin preview-icon" href="#campus-map-global">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     width="15"
                     height="15"
@@ -80,7 +98,7 @@
                     stroke-width="3"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="lucide lucide-map-pin preview-icon">
+                    >
 
                     <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 
                     0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/>
@@ -89,31 +107,34 @@
                 <em>RHB 330</em>
             </a>
 
-            <!-- Event link -->
+            <!-- Event link/target -->
             <h3>
-                <a href="#index.html">Accessibility in VR</a>
+                <a href="#access-in-vr">Accessibility in VR</a>
             </h3>
 
             <!-- Event Details -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <p>Guest speaker with over 10 years of experience in Accessibility.
             </p>
 
             <!-- Event image -->
-            <img src="./assets/" alt="">
+            <img src="./assets/jenn-george.jpg" alt="Students coding around table">
         </div>
 
     </div>
     </div>
 
-    <!-- Bottom Page -->
- <div class="page-overlay"></div>    
-<div id="bottom-page" class="bottom-page">
-    <div class="drag-handle"></div>
-    <h2>Hacksmiths 2026</h2>
-
-     <!-- Map link and pin (from Lucide) -->
-            <a class="campus-map" href="#index.html">
+<!-- BOTTOM PAGES - EVENTS -->
+<!-- Hacksmiths 2026 Expanded -->
+        <!-- Creates a container that covers main content when the bottom page is opened -->
+        <div class="page-overlay"></div>   
+        <!-- Creates the card that will slide over the page overlay --> 
+        <div id="hacksmiths" class="bottom-page">
+        <!-- as JavaScript is beyond the scope of this project, the -->
+        <div class="drag-handle"></div>
+            <a href="#profile">Close</a>
+            <h2>Hacksmiths 2026</h2>
+            <h4>18th November 2026. 18:00pm</h4>
+            <a class="campus-map lucide lucide-map-pin preview-icon" href="#campus-map-global">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     width="15"
                     height="15"
@@ -123,17 +144,83 @@
                     stroke-width="3"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="lucide lucide-map-pin preview-icon">
+                    >
 
                     <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 
                     0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/>
                     <circle cx="12" cy="10" r="3"/>
                 </svg>
                 <em>Student Union Building</em>
-            </a><br>
-             <!-- Event image -->
-            <img src="./assets/hacksmiths.jpg" alt="Students coding around table">
+            </a>
+            
+             <!--Profile image -->
+            <img class="hack-event" src="./assets/hacksmiths.jpg" alt="Students coding around table">
+            <p>Calling all computing students who want to get involvedwith Hacksmiths 2026. Currently recruiting for volunteers. Roles include Administration, Social media rep, and board members. Come along and find out more.</p>
+
         </div>
+
+<!-- Accessibility in VR Expanded-->
+        <div class="page-overlay"></div>    
+        <div id="access-in-vr" class="bottom-page">
+        <div class="drag-handle"></div>
+            <a href="#profile">Close</a>
+            <h2>Accessibility in VR</h2>
+            <h4>10th December 2026. 13:00pm</h4>
+            <a class="campus-map lucide lucide-map-pin preview-icon" href="#campus-map-global">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/>
+                <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <em>RHB 330</em>
+            </a>
+            
+            <!--Profile image -->
+            <img src="./assets/jenn-george.jpg" alt="profile picture of Jennifer George">
+            <p>
+                Jennifer George is a Lecturer at Goldsmiths, who specialises in accessibility.Join her as she discusses accessibility inimmersive technology.
+            </p>
+
+        </div>
+        
+
+<!-- BOTTOM PAGE - MAP -->
+        <div class="page-overlay"></div>
+        <div id="campus-map-global" class="bottom-page">
+            <div class="drag-handle"></div>
+            <a href="#profile">Close</a>
+            <h2>Interactive Campus Map</h2>
+
+            <!-- Map Image -->
+            <img id="app-map"
+                src="./assets/interactive-campus-map.png"
+                alt="Students coding around a table">
+        </div>
+
+<!-- BOTTOM NAVIGATION (Shahid)-->
+<footer class="bottom_nav">
+    <nav class="nav_buttons">
+        <a href="index.html" class="nav_item"> 
+            <img src="assets/home_icon.png" alt="Home icon">
+            <span>Home</span>
+        </a>
+        <a href="calendar.html" class="nav_item active"> <!-- Active added to be highlighted, easier for user's to understand what page they are in -->
+            <img src="assets/calender_icon.png" alt="Calendar icon">
+            <span>Calendar</span>
+        </a>
+        <a href="settings.html" class="nav_item">
+            <img src="assets/settings_icon.png" alt="Settings icon">
+            <span>Settings</span>
+        </a>
+    </nav>
+</footer>
 
 </body>
 </html>
