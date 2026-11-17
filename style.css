@@ -1,160 +1,426 @@
-/* Global*/
-
+/* --- GLOBAL/SHARED --- */
 * {
-    background-color: D9D9D9;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+ 
 }
 
+/* Alhassane added originally */
 @font-face {
-    font-family: "Inter";
-    src: url("assets/fonts/InterVariable.woff2") format("woff2");
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Inter";
+  src: url("assets/fonts/InterVariable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Background colour and sizing for app (Temi) */
+#app-background {
+  background-color: #D9D9D9;
+  min-height: 100vh;
+  width: 100%;
 }
 
 body, button, input, select, link {
-    font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
 }
 
 header {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-#bottom_nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
+/* Font to turn UG into logo styled (Shahid) */
+@font-face {
+  font-family: Jaro;
+  /* set name */
+  src: url(assets/fonts/Jaro-Regular-VariableFont_opsz.ttf);
+  /* url of the font */
 }
 
-@media (min-width: 600px) {
-  .header {grid-area: 1 / span 6;}
-  .menu {grid-area: 2 / span 1;}
-  .content {grid-area: 2 / span 4;}
-  .facts {grid-area: 2 / span 1;}
-  .footer {grid-area: 3 / span 6;}
-}
-
-/* Home Page */
-
-#app-background {
-  background-color: #D9D9D9;
-  height: 100vh;
-  width: 100vw;
-}
-/* 1. Simulating profile space */
-.profile {
-  height: 10rem;
-
-}
-
-/* 2. YELLOW TITLE CARD */
+/* Yellow title cards (Temi) */
 .title-card {
-    background-color: #FFD7008C;
-    border-style: hidden;
-    border-radius: 3rem;
-    height: auto;
-    width: auto;
-    border-radius: 50px;
-    border: 2px solid #FFD700;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  background-color: #FFD7008C;
+  border-style: hidden;
+  border-radius: 3rem;
+  height: auto;
+  width: auto;
+  border-radius: 50px;
+  border: 2px solid #FFD700;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 20px;
 }
 
-/* 3. GREY CONTENT CARD */
+/* Grey title cards (Temi) */
 .content-card {
   background-color: #CCC8C8;
   border: 1px solid black;
   border-radius: 30px;
-  margin: 0px
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+/* Event cards (Temi) */
+.content-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius:30px;
+}
+
+/* Font spacing (Temi) */
+h1 {
+
+  padding: 20px 20px 5px 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+
+  padding: 20px 20px 5px 20px;
+}
+
+h3, p {
+  
+  padding: 0px 20px 5px 20px;
 
 }
 
+a {
+  color: #605D5D;
+  text-decoration: none;
+
+}
+/**** Bottom Pages (Temi) ****/
+
+/* The dark container that covers the page when a bottom page is open */
+.page-overlay {
+  /* positions element relative to viewport */
+  position: fixed;
+  /* Sets top, left, bottom and right positioning to 0 */
+  inset: 0;
+  /* Sets the colour to black at 80% opacity */
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  /* Container starts off hidden */
+  visibility: hidden;
+  /* transition applied to opactity over 0.4 seconds. ease — starts slowly, speeds up, then slows down at the end. */
+  transition: opacity 0.4s ease;
+  /* Puts the container above the page content */
+  z-index: 100;
+}
+
+.bottom-page {
+  position: fixed;
+  /*positions it above the overlay */
+  z-index: 101;
+  /* fixes it using two edges */
+  bottom: 0;
+  left: 0;
+  /* of its container */
+  width: 100%;
+  /* The height of the card */ 
+  height: 90vh;
+  background-color: #FFD700CC;
+  border-radius: 50px;
+  padding: 20px;
+  /* prevents browser adding extra padding by pushing content away from element edge */
+  box-sizing: border-box;
+  /* makes it a flex container to control children */
+  display: flex;
+  /* arrange children vertically */
+  flex-direction: column;
+  /* children will be centred horizontally */
+  align-items: center;
+  /* moves the element down by 100% of its height (positive % moves down like p5.js) */
+  transform: translateY(100%);
+/* animates the transform */
+  transition: transform 0.4s ease-in-out;
+}
+/*body:has CSS Selector - when link is clicked it points to id of element of class it targets */
+body:has(.bottom-page:target) .page-overlay {
+  /* makes pageoverlay visible */
+  opacity: 1;
+  visibility: visible;
+}
+
+/*targeted via id*/
+.bottom-page:target {
+/* moves bottom page up to 0 vertically */
+  transform: translateY(0);
+}
+
+/* styled div to look like drag handle */
+.drag-handle {
+    width: 40px;
+    height: 5px;
+    background-color: #999;
+    border-radius: 10px;
+    margin: 0 auto 20px auto;
+}
+
+.bottom-page h2 {
+  padding: 20px 20px 20px 20px;
+}
+
+/**** TOP USER PROFILE SECTION (Shahid) ****/
+.top_header {
+  background-color: #ccc8c8;
+  border-bottom-left-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem;
+  padding: 0.5rem 0.9375rem 0.9375rem 0.9375rem;
+  /* added */
+  width: auto;
+}
+
+/* Styles the UG logo */
+.top_header .logo {
+  color: #1e48b6;
+  font-family: Jaro;
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 0.3125rem;
+}
+
+.header_content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.625rem;
+}
+
+/* User Profile (Header) */
+.user_card {
+  display: flex;
+  align-items: center;
+  background-color: #d9d9d9;
+  border-radius: 2rem;
+  padding: 0.375rem 0.75rem;
+  flex: 1;
+  gap: 0.625rem;
+}
+
+.user_card img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user_text .user_name {
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: #000000;
+}
+
+.user_text .user_sub {
+  font-size: 0.6rem;
+  color: #605d5d;
+}
+
+/* Campus Map Circle Button */
+.campus_map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1e48b6;
+  border-radius: 50%;
+  width: 3.4375rem;
+  height: 3.4375rem;
+  text-align: center;
+  font-size: 0.55rem;
+  color: #333333;
+}
+
+.campus_map span {
+  font-size: 0.5rem;
+  font-weight: bold;
+}
+
+.campus_map img {
+  width: 2rem;
+  height: 2rem;
+  filter: invert(1);
+  /* Turns dark icon PNGs white */
+  margin-top: 0.125rem;
+}
+
+/**** BOTTOM NAVIGATION (Shahid) ****/
+.bottom_nav {
+  position: fixed;
+  /* Allows it to be present even when moving, allowing seamless navigation */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #1e48b6;
+  /* Using Z-index to always be ontop of any content in pages when scrolling */
+  padding: 0.5rem 0;
+}
+
+.nav_buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.75rem;
+}
+
+.nav_item img {
+  width: 1.375rem;
+  height: 1.375rem;
+  filter: invert(1);
+  /* Turns dark icon PNGs white */
+  margin-bottom: 0.125rem;
+}
+
+/* Active tab highlight style */
+.nav_item.active {
+  font-weight: bold;
+  opacity: 1;
+}
+
+.nav_item:not(.active) {
+  opacity: 0.75;
+}
+/* ***** END OF GLOBAL/SHARED CSS ***** */
+
+
+/**** HOME (Temi) ****/
 .preview-icon {
   background-color: transparent;
   padding-left: 20px;
   color: #1E48B6;
 }
 
-h1 {
-    
-    padding: 20px 20px 5px 20px;
+#access-in-vr p {
+  margin-top: 20px;
 }
 
-h2 {
-    color: #605D5D;
-    padding: 20px 20px 5px 20px;
+#access-in-vr a {
+  padding: 10px;
 }
 
-h3, p {
-    color: #605D5D;
-    padding: 0px 20px 5px 20px;
-  
+#hacksmiths a {
+  padding: 10px;
 }
 
-a {
-  color: #605D5D;
-  
+#hacksmiths p {
+  margin-top: 20px;
 }
-
-img {
-  border-radius: 30px;
-  margin: 0px;
-  height: 100%;
+.hack-event {
+  display: block;
   width: 100%;
-}
-.campus-map {
-  text-decoration: none;
-}
-
-/* Calendar */
-
-/* Settings */
-
-.settings-page details {
-    background-color: #D9D9D9;
-    padding: 16px;
-    margin-bottom: 12px;
-    border-radius: 12px;
+  height: auto;
+  border-radius:30px;
 }
 
-.settings-page .settings-row {
-    display: flex;
-    justify-content: space-between;
-    /*align-items: center;*/
-    gap: 12px;
-    padding: 8px 0;
-    flex-wrap: wrap;
+/**** CALENDAR (Temi) ****/
+#calendar-img {
+  width: 100%;
+  height: 100%;
 }
 
-.settings-page summary {
-    font-size: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 8px 0;
+.note-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  z-index: 200;
 }
 
-/*.settings-page {
-    max-width: 700px;
+
+/**** SETTINGS (Alhassane) ****/
+/* Centres the settings and leaves space for the fixed navigation */
+.settings-page {
+
+  /*This has now been put in global spacing - (Temi) */
+   /* max-width: 700px;
     margin: 0 auto;
-    padding: 16px;
-    box-sizing: border-box;
+    padding: 16px 16px 120px;*/
+
+    /**** Causes bug when trying to comment out - (Temi) ****/
+    font-family: "Inter", Arial, sans-serif;
+}
+
+/***Commented this out to match global settings (Temi)***/
+/*** 
+Uses Inter inside settings instead of the shared Arial rule 
+.settings-page * {
+    font-family: inherit;
+}
+
+/* Adds space inside Temi's yellow card 
+.settings-page > .title-card {
+    padding: 20px;
 }*/
 
+/* Lines the title up with the grey card */
+/*.settings-page h1 {
+    margin: 0 0 16px;
+    padding: 0;
+}
+***/
+
+/* Space around the dropdowns so the grey card shows behind them */
+.settings-page .content-card {
+    padding: 16px;
+}
+
+/* White background for the controls inside each dropdown */
+.settings-page details {
+    background-color: white;
+    border: 1px solid #aaa;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    padding: 0;
+}
+/*Added a height to fill up page - (Temi)*/
+.settings-page > .title-card .content-card {
+  min-height: 100vh;
+}
+
+/* Last dropdown does not need extra space below it */
+.settings-page details:last-child {
+    margin-bottom: 0;
+}
+
+/* Grey heading, keeps the icon and text beside each other */
 .settings-page details > summary {
     display: flex;
     align-items: center;
     gap: 8px;
     list-style: none;
     cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #e5e5e5;
+    padding: 16px;
+    border-radius: 11px;
 }
 
+/* Removes the browser's default arrow */
 .settings-page details > summary::-webkit-details-marker {
     display: none;
 }
 
+/* Creates the arrow and moves it to the right */
 .settings-page details > summary::after {
     content: "";
     width: 8px;
@@ -167,110 +433,40 @@ img {
     transform: rotate(45deg);
 }
 
+/* Turns the arrow upwards when the dropdown opens */
 .settings-page details[open] > summary::after {
     transform: rotate(225deg);
 }
 
-.settings-page details {
-    background-color: white;
-    border: 1px solid #aaa;
-    border-radius: 12px;
-    padding: 0;
-}
-
-.settings-page details > summary {
-    background-color: #e5e5e5;
-    padding: 16px;
-    border-radius: 11px;
-}
-
+/* Flattens the bottom corners of the heading when open */
 .settings-page details[open] > summary {
     border-bottom: 1px solid #ccc;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.settings-page details > .settings-row {
-    padding-inline: 16px;
+/* Labels on the left, controls on the right */
+.settings-page .settings-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    flex-wrap: wrap;
 }
 
+/* Stops controls from going outside the row */
+.settings-page input,
+.settings-page select {
+    max-width: 100%;
+}
+
+/* Keeps the icons small and stops them from shrinking */
 .settings-page .settings-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 0;
+    margin: 0;
     flex-shrink: 0;
     object-fit: contain;
 }
-
-
-
-
-/* Bottom Page */
-
-.bottom-page {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 70vh;
-    background-color: #FFD7008C;
-    border-radius: 30px 30px 0 0;
-    padding: 20px;
-    box-sizing: border-box;
-    transform: translateY(100%);
-    transition: transform 0.4s ease;
-}
-
-.bottom-page:target {
-    transform: translateY(0);
-}
-
-/* Drag Handle */
-
-.drag-handle {
-    width: 40px;
-    height: 5px;
-    background-color: #999;
-    border-radius: 10px;
-    margin: 0 auto 20px auto;
-}
-
-/* Dark background overlay */
-.page-overlay {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease;
-    z-index: 100;
-}
-
-body:has(.bottom-page:target) .page-overlay {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Bottom Page */
-.bottom-page {
-    position: fixed;
-    z-index: 101;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 70vh;
-    background-color: #FFD700;
-    border-radius: 50px;
-    padding: 20px;
-    
-
-    transform: translateY(100%);
-    transition: transform 0.4s ease;
-}
-
-.bottom-page img {
-    margin: 0px;
-    padding: 0px;
-    border-radius: 30px;
-    height: 100%;
-    width: 100%;
-}
-
-
